@@ -123,7 +123,7 @@
   <!-- Footer Section -->
   <footer class="bg-gray-200 py-4">
     <div class="container mx-auto">
-      <p class="text-center">&copy; 2023 My E-commerce Store. All rights reserved.</p>
+      <p class="text-center">&copy; 2023 LMLINK Store. All rights reserved.</p>
       <ul class="flex justify-center mt-4">
         <li class="mr-4"><a href="#">Terms of Service</a></li>
         <li class="mr-4"><a href="#">Privacy Policy</a></li>
