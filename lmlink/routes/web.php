@@ -15,7 +15,7 @@ use Laravel\Socialite\Facades\Socialite;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
