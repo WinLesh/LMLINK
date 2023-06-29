@@ -1,4 +1,8 @@
 <x-guest-layout>
+    <div>
+        <h3 class="text-2xl text-center font-bold p-2">Register Now</h3>
+        <p class="text-center p-2">Join us now by registering an account and shopping with us, want to be a partner? you can also apply with us</p>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 

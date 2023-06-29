@@ -1,16 +1,17 @@
-<nav class="bg-blue-500">
+<nav class="bg-[#061733]">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
-        <a href="#" class="text-white font-bold text-lg">Logo</a>
+        <a href="#" class="text-white font-bold text-lg"><img height="15%" width="15%" src="./images/logo.jpg" alt=""></a>
       </div>
-      <div class="hidden sm:block">
+      <div class="hidden sm:flex">
         <div class="ml-10 flex items-baseline space-x-4">
           <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Home</a>
           <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Shop</a>
           <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">About</a>
           <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-          <a href="#" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">Cart</a>
+          <a href="{{ url('/login') }}" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Sign in</a>
+      <a href="{{ url('/register') }}" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Register now</a>
         </div>
       </div>
       <div class="-mr-2 flex sm:hidden">
@@ -35,7 +36,8 @@
       <a href="#" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Shop</a>
       <a href="#" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">About</a>
       <a href="#" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-      <a href="#" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Cart</a>
+      <a href="{{ url('/login') }}" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Sign in</a>
+      <a href="{{ url('/register') }}" class="text-white hover:text-gray-200 block px-3 py-2 rounded-md text-base font-medium">Register now</a>
     </div>
   </div>
 

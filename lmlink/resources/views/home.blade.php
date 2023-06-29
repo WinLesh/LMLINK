@@ -14,7 +14,7 @@
     }
 
     header {
-      background-color: blue;
+      background-color: #061733;
       padding: 10px;
     }
 
@@ -25,10 +25,13 @@
     }
 
     .hero {
-      background-color: black;
+      background-image: url('./images/logo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
       color: white;
       padding: 50px;
       text-align: center;
+      opacity: 70%;
     }
 
     .hero h1 {
@@ -43,7 +46,7 @@
 
     .btn {
       display: inline-block;
-      background-color: blue;
+      background-color: #061733;
       color: white;
       padding: 10px 20px;
       text-decoration: none;
@@ -69,11 +72,11 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero bg-[url('/images/logo.jpg')]">
     <div class="container mx-auto">
-      <h1 class="text-4xl mb-4">Welcome to My E-commerce Store</h1>
+      <h1 class="text-4xl mb-4">Welcome</h1>
       <p class="text-lg mb-8">Discover the best products for your needs.</p>
-      <a href="#" class="btn">Shop Now</a>
+      <a style="background-color: black" href="{{ url('/register') }}" class="btn z-50">Join us</a>
     </div>
   </section>
 
@@ -84,20 +87,32 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <!-- Display your featured products here -->
         <div class="bg-white p-4 shadow-md">
-          <img src="product1.jpg" alt="Product 1" class="mb-4">
+          <img src="./images/products/featured/prod1.jpg" alt="Product 1" class="mb-4">
           <h3 class="text-lg">Product 1</h3>
           <p class="text-gray-700">$19.99</p>
           <a href="#" class="btn mt-4">Add to Cart</a>
         </div>
         <div class="bg-white p-4 shadow-md">
-          <img src="product2.jpg" alt="Product 2" class="mb-4">
+          <img src="./images/products/featured/prod2.jpg" alt="Product 2" class="mb-4">
           <h3 class="text-lg">Product 2</h3>
           <p class="text-gray-700">$24.99</p>
           <a href="#" class="btn mt-4">Add to Cart</a>
         </div>
         <div class="bg-white p-4 shadow-md">
-          <img src="product3.jpg" alt="Product 3" class="mb-4">
+          <img src="./images/products/featured/prod3.jpg" alt="Product 3" class="mb-4">
           <h3 class="text-lg">Product 3</h3>
+          <p class="text-gray-700">$29.99</p>
+          <a href="#" class="btn mt-4">Add to Cart</a>
+        </div>
+        <div class="bg-white p-4 shadow-md">
+          <img src="./images/products/featured/prod4.jpg" alt="Product 3" class="mb-4">
+          <h3 class="text-lg">Product 4</h3>
+          <p class="text-gray-700">$29.99</p>
+          <a href="#" class="btn mt-4">Add to Cart</a>
+        </div>
+        <div class="bg-white p-4 shadow-md">
+          <img src="./images/products/featured/prod5.jpg" alt="Product 3" class="mb-4">
+          <h3 class="text-lg">Product 5</h3>
           <p class="text-gray-700">$29.99</p>
           <a href="#" class="btn mt-4">Add to Cart</a>
         </div>
