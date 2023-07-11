@@ -1,3 +1,27 @@
+<div>
+    <!-- Modal -->
+<div wire:ignore.self class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Category Delete</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form wire:submit.prevent="destroyCategory">
+        <div class="modal-body">
+            <h6>Are you sure you want to delete this category?</h6>
+        </div>
+        <div class="modal-footer">
+            <button id="closeButton" type="button" class="btn btn-primary text-black" data-bs-dismiss="modal">No, return</button>
+            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
 <div class="row">
               <div class="col-md-12">
                 @if (session('message'))
@@ -29,7 +53,7 @@
                                     <td>{{ $category->status =='1' ? 'Hidden':'Visible' }}</td>
                                     <td>
                                         <a href="{{ url('admin/category/'.$category->id.'/edit') }}" class="btn btn-success">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="#" wire:click="deleteCategory({{ $category->id }})" data-bs-toggle="modal" data-bs-target="#deleteModel" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
 
@@ -45,3 +69,16 @@
                 </div>
               </div>
 </div>
+
+</div>
+
+@push('script')
+
+    <script>
+
+        window.addEventListener('close-modal', event => {
+            $('#deleteModal').modal('hide');
+        });
+    </script>
+
+@endpush

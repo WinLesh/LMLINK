@@ -35,23 +35,31 @@ Route::get('/cart', function () {
     return view('cart');
 })->middleware(['auth', 'verified'])->name('cart');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::prefix('admin')->group(function(){
-    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->
+    middleware(['auth','admin']);
 
     // Category Routes
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function (){
-        Route::get('/category', 'index');
-        Route::get('/category/create', 'store');
-        Route::post('/category', 'sore');
+        Route::get('/category', 'index')->
+    middleware(['auth','admin']);
+        Route::get('/category/create', 'create')->
+    middleware(['auth','admin']);
+        Route::post('/category', 'store')->
+    middleware(['auth','admin']);
+        Route::get('/category/{category}/edit', 'edit')->
+    middleware(['auth','admin']);
+        Route::put('/category/{category}', 'update')->
+    middleware(['auth','admin']);
     });
 
-})->
-    middleware(['auth','admin']);
+    // Brands
+    Route::get('/brands',  App\Http\Livewire\Admin\Brand\Index::class);
+});
 
 require __DIR__.'/auth.php';
