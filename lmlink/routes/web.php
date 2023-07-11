@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,8 +42,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::prefix('admin')->group(function(){
-    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+
+    // Category Routes
+    Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function (){
+        Route::get('/category', 'index');
+        Route::get('/category/create', 'store');
+        Route::post('/category', 'sore');
+    });
+
+})->
     middleware(['auth','admin']);
-});
 
 require __DIR__.'/auth.php';
