@@ -60,6 +60,22 @@ Route::prefix('admin')->group(function(){
 
     // Brands
     Route::get('/brands',  App\Http\Livewire\Admin\Brand\Index::class);
+
+    // Products Routes
+    Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function (){
+        Route::get('/products', 'index')->
+    middleware(['auth','admin']);
+        Route::get('/products/create', 'create')->
+    middleware(['auth','admin']);
+        Route::post('/products', 'store')->
+    middleware(['auth','admin']);
+        Route::get('/products/{product}/edit', 'edit');
+        Route::put('/products/{product}', 'update');
+        Route::get('products/{product_id}/delete', 'destroy');
+        Route::get('product-image/{product_image_id}/delete', 'destroyImage');
+    });
+
+
 });
 
 require __DIR__.'/auth.php';

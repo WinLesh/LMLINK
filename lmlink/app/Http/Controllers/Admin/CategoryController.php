@@ -8,6 +8,7 @@ use App\Http\Requests\CategoryFormRequest;
 use App\Models\Category;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -25,7 +26,7 @@ class CategoryController extends Controller
 
         $category = new Category;
         $category->name = $validatedData['name'];
-        $category->slug = $validatedData['slug'];
+        $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
         if($request->hasFile('image')){
             $file = $request->file('image');
